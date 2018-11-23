@@ -144,7 +144,7 @@ else:
         CFLAGS.append('-DSHUFFLE_AVX2_ENABLED')
         sources += [f for f in glob('c-blosc/blosc/*.c') if 'avx2' in f]
         if os.name == 'posix':
-            CFLAGS.append('-mavx2')
+            CFLAGS.append('-march=core-avx2')
         elif os.name == 'nt':
             def_macros += [('__AVX2__', 1)]
 
